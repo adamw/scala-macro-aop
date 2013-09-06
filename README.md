@@ -1,8 +1,8 @@
 scala-macro-aop
 ===============
 
-delegate / proxy
-----------------
+delegate / proxy / decorator
+----------------------------
 
 The `@delegate` macro annotation can be applied to class parameters. The macro will generate missing methods which
 delegate calls to the annotated value.
