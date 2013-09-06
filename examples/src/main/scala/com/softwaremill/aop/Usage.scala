@@ -1,11 +1,20 @@
 package com.softwaremill.aop
 
 object Usage extends App {
-  val f = new DefaultFoo
-  val w = new WrappedFoo(f)
+  def invokeMethodsOnFoo(foo: Foo) {
+    println("Method 1 result: " + foo.method1())
+    println("Method 2 result: " + foo.method2("x"))
+    println("Method 3 result: " + foo.method3("y"))
+    println("Method 4 result: " + foo.method4("z", 10L))
+  }
 
-  println("Method 1 result: " + w.method1())
-  println("Method 2 result: " + w.method2("x"))
-  println("Method 3 result: " + w.method3("y"))
-  println("Method 4 result: " + w.method4("z", 10L))
+  val original = new DefaultFoo
+  val wrapped = new WrappedFoo(original)
+
+  println("Original:")
+  invokeMethodsOnFoo(original)
+
+  println("---------")
+  println("Wrapped:")
+  invokeMethodsOnFoo(wrapped)
 }
