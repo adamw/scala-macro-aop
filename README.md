@@ -4,8 +4,8 @@ scala-macro-aop
 delegate / proxy
 ----------------
 
-The `@delegate` annotation can be applied to class parameters. The macro will generate missing methods which delegate
-calls to the annotated value.
+The `@delegate` macro annotation can be applied to class parameters. The macro will generate missing methods which
+delegate calls to the annotated value.
 
 Currently the implementation is at a POC stage, doesn't support overriding, method type parameters or multiple
 parameter lists.
@@ -28,8 +28,8 @@ class FooWrapper(@delegate wrapped: Foo) extends Foo {
 }
 ````
 
-This will compile, even though there's no direct definition of `m2` in `FooWrapper`. That's because of the `@delegate`,
-which will generate the `m2` method (`m1` is already defined). The generated code will be:
+This will compile, even though there's no direct definition of `m2` in `FooWrapper`. That's because of the `@delegate`
+macro annotation, which will generate the `m2` method (`m1` is already defined). The generated code will be:
 
 ````scala
 def m2(p2: Long, p3: Float) = wrapped.m2(p2, p3)
