@@ -8,8 +8,8 @@ object Usage extends App {
     println("Method 4 result: " + foo.method4("z", 10L))
   }
 
-  val original = new DefaultFoo
-  val wrapped = new WrappedFoo(original)
+  val original = new FooImpl
+  val wrapped = new FooWrapper(original)
 
   println("Original:")
   invokeMethodsOnFoo(original)
