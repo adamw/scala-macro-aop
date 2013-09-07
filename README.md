@@ -42,3 +42,4 @@ def method4(p1: String, p2: Long) = wrapped.method4(p2, p3)
 
 To see the macro in action, execute `sbt run`.
 
+See also the blog: [Automatic generation of delegate methods with Macro Annotations](http://www.warski.org/blog/2013/09/automatic-generation-of-delegate-methods-with-macro-annotations/)
